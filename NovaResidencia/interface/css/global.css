@@ -1,0 +1,46 @@
+* {
+  padding:0;
+  margin:0;
+  vertical-align:baseline;
+  list-style:none;
+  }
+body{
+  background-color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  color: black;
+}
+.div-tela{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: auto;
+}
+.div-inicio{
+  display: flex;
+  flex-direction: column;
+}
+.titulo-sistema{
+  font-size: 50px;
+  text-align: center;
+  font-weight: bolder;
+  padding-top: 50px;
+}
+.div-botoes{
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  gap: 60px;
+  margin-top: 100px;
+}
+.botao{
+  background-color: lightgray;
+  height: 40px;
+  width: 150px;
+  margin-bottom: 50px;
+  text-align: center;
+  align-content: center;
+  text-decoration: none;
+  color: black;
+  }
+
+  
