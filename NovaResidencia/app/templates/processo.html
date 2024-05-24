@@ -15,6 +15,7 @@
                     <th scope="col">Data da solicitação</th>
                     <th scope="col">Numero do termo</th>
                     <th scope="col">Status da transação</th>
+                    <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
@@ -32,7 +33,10 @@
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{% url 'form_processo' %}">Adicionar Novo Processo</a>
+        <a href="{% url 'form_processo' %}" class="btn btn-success">Adicionar Novo Processo</a> <br>
+        <a href="{% url 'home' %}" class="btn btn-outline-primary mt-2">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
     </div>
 
 </body>

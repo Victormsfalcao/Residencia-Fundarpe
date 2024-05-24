@@ -13,7 +13,7 @@
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-            <button type="submit" class="btn btn-success" formaction="{% url 'usuarios_html' %}">Salvar</button>
+        <button type="submit" class="btn btn-success">Salvar</button>
     </form>
    
     <a href="{% url 'usuarios_html' %}" class="btn btn-outline-primary mt-2">

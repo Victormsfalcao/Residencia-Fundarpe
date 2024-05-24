@@ -33,7 +33,10 @@
                 {% endfor %}
             </tbody>
         </table>
-        <a href="{% url 'form_transacao' %}">Adicionar Nova Transacao</a>
+        <a href="{% url 'form_transacao' %}" class="btn btn-success">Adicionar Nova Transacao</a> <br>
+        <a href="{% url 'home' %}" class="btn btn-outline-primary mt-2">
+            <i class="bi bi-arrow-left"></i> Voltar
+        </a>
     </div>
 
 </body>
