@@ -4,10 +4,12 @@ from .models import Projeto, Processo, CadastroUsuario, Transacao
 
 
 def home(request):
+
     projetos = Projeto.objects.all()
     usuarios = CadastroUsuario.objects.all()
     transacoes = Transacao.objects.all()
     processos = Processo.objects.all()
+
     return render(
         request,
         "index.html",
@@ -21,6 +23,7 @@ def home(request):
 
 
 def form_cadastro_usuario(request):
+
     if request.method == "POST":
         form = CadastroUsuarioForm(request.POST)
         if form.is_valid():
@@ -62,3 +65,7 @@ def form_processo(request):
     else:
         form = ProcessoForm()
     return render(request, "form_processo.html", {"form": form})
+
+def view_usuarios(request):
+    usuarios = CadastroUsuario.objects.all()
+    return render(request, "view.html", {"usuarios": usuarios})

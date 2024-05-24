@@ -3,6 +3,16 @@ from .models import CadastroUsuario, Transacao, Projeto, Processo
 
 
 class CadastroUsuarioForm(forms.ModelForm):
+    SETOR_CHOICES = [
+        ('UNAT', 'UNAT'),
+        ('UAFF', 'UAFF'),
+        ('SUGEF', 'SUGEF'),
+        ('ASGO', 'ASGO'),
+        ('ASJU', 'ASJU'),
+        ('SEJU', 'SEJU'),
+        ('PRESI', 'PRESI'),
+        ('UFIN', 'UFIN'),
+    ]
     class Meta:
         model = CadastroUsuario
         fields = ["nome", "email", "senha", "setor"]

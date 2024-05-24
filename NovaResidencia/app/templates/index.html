@@ -10,44 +10,44 @@
 
 <body>
 
-    <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h1>1. Lista de Usuarios</h1>
-            <ul>
-                {% for usuario in usuarios %}
-                <li>{{ usuario.nome }} - {{ usuario.email }}</li>
-                {% endfor %}
-            </ul>
-        <a href="{% url 'form_cadastro_usuario' %}">Adicionar Novo Usuario</a>
+    <div class="col-8 m-auto pt-4 pb-4 text-center">
+        <h1>1. Usuarios</h1>
+            <div class="pt-4">
+                <a href="{% url 'form_cadastro_usuario' %}" class="btn btn-success">Adicionar Novo Usuario</a>
+                <a href="{% url 'view_usuarios' %}" class="btn btn-dark">Visualizar</a>
+                <a href="" class="btn btn-primary">Editar</a>
+                <a href="" class="btn btn-danger">Excluir</a>
+            </div>
     </div>
     
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h1>2. Lista de Transacoes</h1>
-            <ul>
-                {% for transacao in transacoes %}
-                <li>{{ transacao.data_transacao }} - {{ transacao.status_transacao }} - {{transacao.usuario}}</li>
-                {% endfor %}
-            </ul>
-        <a href="{% url 'form_transacao' %}">Adicionar Nova Transacao</a>
+        <h1>2. Transacoes</h1>
+            <div class="pt-4">
+                <a href="{% url 'form_transacao' %} " class="btn btn-success">Adicionar Nova Transacao</a>
+                <a href="" class="btn btn-dark">Visualizar</a>
+                <a href="" class="btn btn-primary">Editar</a>
+                <a href="" class="btn btn-danger">Excluir</a>
+            </div>
     </div>
     
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h1>3. Lista de Projetos</h1>
-            <ul>
-                {% for projeto in projetos %}
-                <li>{{ projeto.numero_projeto }} - {{ projeto.status_transacao }}</li>
-                {% endfor %}
-            </ul>
-        <a href="{% url 'form_projeto' %}">Adicionar Novo Projeto</a>
+        <h1>3. Projetos</h1>
+            <div class="pt-4">
+                <a href="{% url 'form_projeto' %}" class="btn btn-success">Adicionar Novo Projeto</a>
+                <a href="" class="btn btn-dark">Visualizar</a>
+                <a href="" class="btn btn-primary">Editar</a>
+                <a href="" class="btn btn-danger">Excluir</a>
+            </div>
     </div>
     
     <div class="col-8 m-auto pt-4 pb-2 text-center">
         <h1>4. Lista de Processos</h1>
-            <ul>
-                {% for processo in processos %}
-                <li>{{ processo.data_solicitacao }} - {{ processo.numero_termo }} - {{processo.status_transacao}}</li>
-                {% endfor %}
-            </ul>
-        <a href="{% url 'form_processo' %}">Adicionar Novo Processo</a>
+            <div class="pt-4">
+                <a href="{% url 'form_processo' %}" class="btn btn-success">Adicionar Novo Processo</a>
+                <a href="" class="btn btn-dark">Visualizar</a>
+                <a href="" class="btn btn-primary">Editar</a>
+                <a href="" class="btn btn-danger">Excluir</a>
+            </div>
     </div>
 </body>
 
