@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="col-8 m-auto pt-4 pb-4 text-center">
+        <h1>Transações</h1>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">Usuario</th>
+                    <th scope="col">Data da transação</th>
+                    <th scope="col">Status da transação</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for transacao in transacoes %}
+                <tr>
+                    <td>{{ transacao.usuario }}</td>
+                    <td>{{ transacao.data_transacao }}</td>
+                    <td>{{ transacao.status_transacao }}</td>
+                    <td>
+                        <a href="" class="btn btn-primary">Editar</a>
+                        <a href="" class="btn btn-dark">Visualizar</a>
+                        <a href="" class="btn btn-danger">Excluir</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <a href="{% url 'form_transacao' %}">Adicionar Nova Transacao</a>
+    </div>
+
+</body>
+</html>

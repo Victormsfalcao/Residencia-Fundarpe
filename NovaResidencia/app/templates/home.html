@@ -1,22 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <title>Home</title>
 </head>
-
 <body>
 
     <div class="col-8 m-auto pt-4 pb-4 text-center">
         <h1>Menu</h1>
         <div class="pt-4">
-            <a href="usuarios.html" class="btn btn-dark">Usuários</a>
-            <a href="transacao.html" class="btn btn-dark">Transações</a>
-            <a href="projeto.html" class="btn btn-dark">Projetos</a>
-            <a href="processo.html" class="btn btn-dark">Processos</a>
+            <a href="{% url 'usuarios_html' %}" class="btn btn-dark">Usuários</a>
+            <a href="{% url 'transacao_html' %}" class="btn btn-dark">Transações</a>
+            <a href="{% url 'projeto_html' %}" class="btn btn-dark">Projetos</a>
+            <a href="{% url 'processo_html' %}" class="btn btn-dark">Processos</a>
         </div>
     </div>
 

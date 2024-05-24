@@ -1,38 +1,36 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import CadastroUsuarioForm, TransacaoForm, ProcessoForm, ProjetoForm
 from .models import Projeto, Processo, CadastroUsuario, Transacao
 
 
 def home(request):
+    return render(request, 'home.html')
 
-    projetos = Projeto.objects.all()
+def usuarios_html(request):
     usuarios = CadastroUsuario.objects.all()
-    transacoes = Transacao.objects.all()
-    processos = Processo.objects.all()
+    return render(request, "usuarios.html", {"usuarios": usuarios})
 
-    return render(
-        request,
-        "index.html",
-        {
-            "projetos": projetos,
-            "usuarios": usuarios,
-            "transacoes": transacoes,
-            "processos": processos,
-        },
-    )
+def transacao_html(request):
+    transacao = Transacao.objects.all()
+    return render(request, "transacao.html", {"transacao": transacao})
 
+def projeto_html(request):
+    projeto = Projeto.objects.all()
+    return render(request, "projeto.html", {"projeto": projeto})
+
+def processo_html(request):
+    processo = Processo.objects.all()
+    return render(request, "processo.html", {"processo": processo})
 
 def form_cadastro_usuario(request):
-
     if request.method == "POST":
         form = CadastroUsuarioForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("home")
+            return redirect("home")  # Ou redirecione para onde desejar após o cadastro
     else:
         form = CadastroUsuarioForm()
     return render(request, "form_cadastro_usuario.html", {"form": form})
-
 
 def form_transacao(request):
     if request.method == "POST":
@@ -42,7 +40,7 @@ def form_transacao(request):
             return redirect("home")
     else:
         form = TransacaoForm()
-    return render(request, "form_transacao.html", {"form": form})
+    return render(request, "transacao.html", {"form": form})
 
 
 def form_projeto(request):
@@ -53,7 +51,7 @@ def form_projeto(request):
             return redirect("home")
     else:
         form = ProjetoForm()
-    return render(request, "form_projeto.html", {"form": form})
+    return render(request, "projeto.html", {"form": form})
 
 
 def form_processo(request):
@@ -64,8 +62,6 @@ def form_processo(request):
             return redirect("home")
     else:
         form = ProcessoForm()
-    return render(request, "form_processo.html", {"form": form})
+    return render(request, "processo.html", {"form": form})
 
-def view_usuarios(request):
-    usuarios = CadastroUsuario.objects.all()
-    return render(request, "view.html", {"usuarios": usuarios})
+
