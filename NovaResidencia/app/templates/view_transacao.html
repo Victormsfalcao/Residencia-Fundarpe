@@ -13,8 +13,9 @@
             <div class="card-body">
                 <h5 class="card-title">Usuário: {{ transacao.usuario }}</h5> <br>
                 <p class="card-text"><strong>Data da Transação: </strong>{{ transacao.data_transacao }}</p>
-                <p class="card-text"><strong>Status da Transação:</strong> {{ transacao.status_transacao }}</p>
-                <!-- Adicione outros campos aqui conforme necessário -->
+                <p class="card-text"><strong>Status da Transação: </strong> {{ transacao.status_transacao }}</p>
+                <p class="card-text"><strong>ID do usuario: </strong>{{ transacao.usuario.id }}</p>
+
             </div>
         </div>
         <a href="{% url 'transacao_html' %}" class="btn btn-outline-primary mt-2">

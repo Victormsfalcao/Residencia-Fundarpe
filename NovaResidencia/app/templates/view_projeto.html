@@ -12,12 +12,12 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title"><strong></strong>Nome do projeto: {{ projeto.titulo_projeto }}</h5> <br>
-                <p class="card-text"><strong>Numero do projeto:</strong> {{ projeto.numero_projeto }}</p>
-                <p class="card-text"><strong>Numero do sei:</strong> {{ projeto.numero_sei }}</p>
-                <p class="card-text"><strong>Tipo de pagamento:</strong> {{ projeto.numero_parcela }}</p>
-                <p class="card-text"><strong>Valor solicitado:</strong> {{ projeto.valor_solicitado }}</p>
-                <p class="card-text"><strong>Status transacao:</strong> {{ projeto.status_transacao }}</p>
-                <!-- Adicione outros campos aqui conforme necessário -->
+                <p class="card-text"><strong>Numero do projeto: </strong> {{ projeto.numero_projeto }}</p>
+                <p class="card-text"><strong>Numero do sei: </strong> {{ projeto.numero_sei }}</p>
+                <p class="card-text"><strong>Tipo de pagamento: </strong> {{ projeto.numero_parcela }}</p>
+                <p class="card-text"><strong>Valor solicitado: </strong> {{ projeto.valor_solicitado }}</p>
+                <p class="card-text"><strong>Status transacao: </strong> {{ projeto.status_transacao }}</p>
+                <p class="card-text"><strong>ID da transacao: </strong> {{ projeto.transacao.id }}</p>
             </div>
         </div>
         <a href="{% url 'projeto_html' %}" class="btn btn-outline-primary mt-2">

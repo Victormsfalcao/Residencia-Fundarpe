@@ -12,6 +12,7 @@
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
+                    <th scope="col">ID Processo</th>
                     <th scope="col">Nome do projeto</th>
                     <th scope="col">Data da solicitação</th>
                     <th scope="col">Numero do termo</th>
@@ -22,18 +23,20 @@
             <tbody>
                 {% for processo in processos %}
                 <tr>
+                    <td>{{ processo.id }}</td>
                     <td>{{ processo.projeto }}</td>
                     <td>{{ processo.data_solicitacao }}</td>
                     <td>{{ processo.numero_termo }}</td>
                     <td>{{ processo.status_transacao }}</td>
                     <td>
-                        <a href="{% url 'edit_processo' processo.id %}" class="btn btn-primary">Editar</a>
-                        <a href="{% url 'view_processo' processo.id %}" class="btn btn-dark">Visualizar</a>
-                        <form action="{% url 'delete_processo' processo.id %}" method="post">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-danger btnDel" onclick="return confirm('Tem certeza que deseja excluir este processo?')">Excluir</button>
-                        </form>
-
+                        <div class="btn-group" role="group">
+                            <a href="{% url 'edit_processo' processo.id %}" class="btn btn-primary mr-2 rounded">Editar</a>
+                            <a href="{% url 'view_processo' processo.id %}" class="btn btn-dark mr-2 rounded">Visualizar</a>
+                            <form action="{% url 'delete_processo' processo.id %}" method="post" class="d-inline-block">
+                                {% csrf_token %}
+                                <button type="submit" class="btn btn-danger btnDel rounded" onclick="return confirm('Tem certeza que deseja excluir este processo?')">Excluir</button>
+                            </form>
+                        </div>
                     </td>
                 </tr>
                 {% endfor %}
