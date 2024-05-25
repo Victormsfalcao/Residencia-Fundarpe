@@ -12,8 +12,8 @@
         <div class="card">
             <div class="card-body">
                 <h5 class="card-title">Nome do projeto: {{ processo.projeto }}</h5> <br>
-                <p class="card-text"><strong>Status da Transação:</strong> {{ processo.data_conferencia_documentos }}</p>
-                <p class="card-text"><strong>Número do Termo:</strong> {{ processo.data_autorizacao_empenho }}</p>
+                <p class="card-text"><strong>Data da conferencia de documentos:</strong> {{ processo.data_conferencia_documentos }}</p>
+                <p class="card-text"><strong>Data da autorizacao do empenho:</strong> {{ processo.data_autorizacao_empenho }}</p>
                 <p class="card-text"><strong>Data da Confeccao do Empenho:</strong> {{ processo.data_confeccao_empenho }}</p>
                 <p class="card-text"><strong>Numero de Empenho:</strong> {{ processo.numero_empenho }}</p>
                 <p class="card-text"><strong>Data da Confeccao do Termo:</strong> {{ processo.data_confeccao_termo }}</p>
@@ -27,7 +27,6 @@
                 <p class="card-text"><strong>Data da Ordem Bancaria:</strong> {{ processo.data_ordem_bancaria }}</p>
                 <p class="card-text"><strong>Status da Transacao:</strong> {{ processo.status_transacao }}</p>
                 <p class="card-text"><strong>Data da Solicitação</strong>: {{ processo.data_solicitacao }}</p>
-                <!-- Adicione outros campos aqui conforme necessário -->
             </div>
         </div>
         <a href="{% url 'processo_html' %}" class="btn btn-outline-primary mt-2">

@@ -51,5 +51,6 @@ class Processo(models.Model):
     status_transacao = models.CharField(max_length=100)
     projeto = models.ForeignKey(Projeto, on_delete=models.CASCADE)
 
+
     def __str__(self):
         return f"Processo {self.numero_empenho}"
