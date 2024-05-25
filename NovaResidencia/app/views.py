@@ -9,7 +9,7 @@ def home(request):
 
 def usuarios_html(request):
     usuarios_list = CadastroUsuario.objects.all()
-    paginator = Paginator(usuarios_list, 1)
+    paginator = Paginator(usuarios_list, 5)
 
     page = request.GET.get('page')
     try:
@@ -26,7 +26,7 @@ def usuarios_html(request):
 
 def transacao_html(request):
     transacoes_list = Transacao.objects.all()
-    paginator = Paginator(transacoes_list, 1)
+    paginator = Paginator(transacoes_list, 5)
 
     page = request.GET.get('page')
     try:
@@ -42,7 +42,7 @@ def transacao_html(request):
 
 def projeto_html(request):
     projetos_list = Projeto.objects.all()
-    paginator = Paginator(projetos_list, 1)
+    paginator = Paginator(projetos_list, 5)
 
     page = request.GET.get('page')
     try:
@@ -58,7 +58,7 @@ def projeto_html(request):
 
 def processo_html(request):
     processos_list = Processo.objects.all()
-    paginator = Paginator(processos_list, 1)
+    paginator = Paginator(processos_list, 5)
 
     page = request.GET.get('page')
     try:
@@ -142,7 +142,7 @@ def edit_processo(request, processo_id):
         form = ProcessoForm(request.POST, instance=processo)
         if form.is_valid():
             form.save()
-            return redirect('processo_html')  
+            return redirect('processo_html')
     else:
         form = ProcessoForm(instance=processo)
     return render(request, 'edit_processo.html', {'form': form})
