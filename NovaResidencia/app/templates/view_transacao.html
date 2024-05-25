@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center">Detalhes da Transação</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Usuário: {{ transacao.usuario }}</h5> <br>
+                <p class="card-text"><strong>Data da Transação: </strong>{{ transacao.data_transacao }}</p>
+                <p class="card-text"><strong>Status da Transação:</strong> {{ transacao.status_transacao }}</p>
+                <!-- Adicione outros campos aqui conforme necessário -->
+            </div>
+        </div>
+        <a href="{% url 'transacao_html' %}" class="btn btn-outline-primary mt-2">
+            <i class="bi bi-arrow-left"></i> Voltar para Transações
+        </a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+
+  <div class="container">
+        <h1 class="text-center">Detalhes do Projeto</h1>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title"><strong></strong>Nome do projeto: {{ projeto.titulo_projeto }}</h5> <br>
+                <p class="card-text"><strong>Numero do projeto:</strong> {{ projeto.numero_projeto }}</p>
+                <p class="card-text"><strong>Numero do sei:</strong> {{ projeto.numero_sei }}</p>
+                <p class="card-text"><strong>Tipo de pagamento:</strong> {{ projeto.numero_parcela }}</p>
+                <p class="card-text"><strong>Valor solicitado:</strong> {{ projeto.valor_solicitado }}</p>
+                <p class="card-text"><strong>Status transacao:</strong> {{ projeto.status_transacao }}</p>
+                <!-- Adicione outros campos aqui conforme necessário -->
+            </div>
+        </div>
+        <a href="{% url 'projeto_html' %}" class="btn btn-outline-primary mt-2">
+            <i class="bi bi-arrow-left"></i> Voltar para Projetos
+        </a>
+    </div>
+
+</body>
+</html>

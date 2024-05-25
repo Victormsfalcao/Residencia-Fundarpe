@@ -25,8 +25,8 @@
                     <td>{{ processo.numero_termo }}</td>
                     <td>{{ processo.status_transacao }}</td>
                     <td>
-                        <a href="" class="btn btn-primary">Editar</a>
-                        <a href="" class="btn btn-dark">Visualizar</a>
+                        <a href="{% url 'edit_processo' processo.id %}" class="btn btn-primary">Editar</a>
+                        <a href="{% url 'view_processo' processo.id %}" class="btn btn-dark">Visualizar</a>
                         <a href="" class="btn btn-danger">Excluir</a>
                     </td>
                 </tr>

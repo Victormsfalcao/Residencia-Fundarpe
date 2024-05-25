@@ -25,9 +25,9 @@
                 <td>{{ usuario.email }}</td>
                 <td>{{ usuario.setor }}</td>
                 <td>
-                    <a href="" class="btn btn-primary">Editar</a>
-                    <a href="" class="btn btn-dark">Visualizar</a>
-                    <a href="" class="btn btn-danger">Excluir</a>
+                    <a href="{% url 'edit_usuario' usuario.id %}" class="btn btn-primary">Editar</a>
+                    <a href="{% url 'view_usuario' usuario.id %}" class="btn btn-dark">Visualizar</a>
+                    <a href="" class="btn btn-danger btnDel">Excluir</a>
                 </td>
             </tr>
             {% endfor %}
@@ -39,8 +39,8 @@
             <i class="bi bi-arrow-left"></i> Voltar
         </a>
     </div>
+ </div>
 
-    </div>
 
 </body>
 </html>

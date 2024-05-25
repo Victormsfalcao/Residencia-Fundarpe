@@ -11,6 +11,13 @@ from app.views import (
     form_transacao,
     form_processo,
     form_projeto,
+    edit_usuario,
+    edit_projeto,
+    edit_processo,
+    view_usuario,
+    view_transacao,
+    view_projeto,
+    view_processo,
 )
 
 urlpatterns = [
@@ -24,4 +31,11 @@ urlpatterns = [
     path("form_transacao.html/", form_transacao, name="form_transacao"),
     path("form_projeto/", form_projeto, name="form_projeto"),
     path("form_processo/", form_processo, name="form_processo"),
+    path("edit_usuario/<int:usuario_id>/", edit_usuario, name="edit_usuario"),
+    path("edit_projeto/<int:projeto_id>/", edit_projeto, name="edit_projeto"),
+    path("edit_processo/<int:processo_id>/", edit_processo, name="edit_processo"),
+    path("view_usuario/<int:usuario_id>/", view_usuario, name="view_usuario"),
+    path("view_transacao/<int:transacao_id>/", view_transacao, name="view_transacao"),
+    path("view_projeto/<int:projeto_id>/", view_projeto, name="view_projeto"),
+    path("view_processo/<int:processo_id>/", view_processo, name="view_processo"),
 ]
