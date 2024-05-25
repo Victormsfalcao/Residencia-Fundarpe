@@ -27,7 +27,12 @@
                 <td>
                     <a href="{% url 'edit_usuario' usuario.id %}" class="btn btn-primary">Editar</a>
                     <a href="{% url 'view_usuario' usuario.id %}" class="btn btn-dark">Visualizar</a>
-                    <a href="" class="btn btn-danger btnDel">Excluir</a>
+                    <form action="{% url 'delete_usuario' usuario.id %}" method="post">
+                        {% csrf_token %}
+                        <button type="submit" class="btn btn-danger btnDel" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
+                    </form>
+
+
                 </td>
             </tr>
             {% endfor %}

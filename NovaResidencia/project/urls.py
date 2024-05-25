@@ -18,6 +18,10 @@ from app.views import (
     view_transacao,
     view_projeto,
     view_processo,
+    delete_usuario,
+    delete_transacao,
+    delete_projeto,
+    delete_processo,
 )
 
 urlpatterns = [
@@ -38,4 +42,8 @@ urlpatterns = [
     path("view_transacao/<int:transacao_id>/", view_transacao, name="view_transacao"),
     path("view_projeto/<int:projeto_id>/", view_projeto, name="view_projeto"),
     path("view_processo/<int:processo_id>/", view_processo, name="view_processo"),
+    path("delete_usuario/<int:id>/", delete_usuario, name="delete_usuario"),
+    path("delete_transacao/<int:id>/", delete_transacao, name="delete_transacao"),
+    path("delete_projeto/<int:id>/", delete_projeto, name="delete_projeto"),
+    path("delete_processo/<int:id>/", delete_processo, name="delete_processo"),
 ]

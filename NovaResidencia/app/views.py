@@ -162,3 +162,31 @@ def view_projeto(request, projeto_id):
 def view_processo(request, processo_id):
     processo = get_object_or_404(Processo, pk=processo_id)
     return render(request, 'view_processo.html', {'processo': processo})
+
+def delete_usuario(request, id):
+    usuario = CadastroUsuario.objects.get(pk=id)
+    if request.method == 'POST':
+        usuario.delete()
+        return redirect('usuarios_html')
+    return render(request, 'usuarios.html', {'usuario': usuario})
+
+def delete_transacao(request, id):
+    transacao = Transacao.objects.get(pk=id)
+    if request.method == 'POST':
+        transacao.delete()
+        return redirect('transacao_html')
+    return render(request, 'transacao.html', {'transacao': transacao})
+
+def delete_projeto(request, id):
+    projeto = Projeto.objects.get(pk=id)
+    if request.method == 'POST':
+        projeto.delete()
+        return redirect('projeto_html')
+    return render(request, 'projeto.html', {'projeto': projeto})
+
+def delete_processo(request, id):
+    processo = Processo.objects.get(pk=id)
+    if request.method == 'POST':
+        processo.delete()
+        return redirect('processo_html')
+    return render(request, 'processo.html', {'processo': processo})
