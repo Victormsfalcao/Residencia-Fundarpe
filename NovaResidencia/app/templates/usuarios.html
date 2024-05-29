@@ -28,12 +28,8 @@
                 <td>{{ usuario.setor }}</td>
                 <td>
                     <div class="btn-group" role="group">
-                        <a href="{% url 'edit_usuario' usuario.id %}" class="btn btn-primary mr-2 rounded">Editar</a>
-                        <a href="{% url 'view_usuario' usuario.id %}" class="btn btn-dark mr-2 rounded">Visualizar</a>
-                        <form action="{% url 'delete_usuario' usuario.id %}" method="post" class="d-inline-block">
-                            {% csrf_token %}
-                            <button type="submit" class="btn btn-danger btnDel rounded" onclick="return confirm('Tem certeza que deseja excluir este usuário?')">Excluir</button>
-                        </form>
+
+                        <a href="{% url 'view_usuario' usuario.id %}" class="btn btn-primary mr-2 rounded">Visualizar</a>
                     </div>
                 </td>
             </tr>

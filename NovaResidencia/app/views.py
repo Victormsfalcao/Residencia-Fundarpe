@@ -136,7 +136,7 @@ def form_projeto(request):
         form = ProjetoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("projeto.html")
+            return redirect("projeto_html")
     else:
         form = ProjetoForm()
     return render(request, "form_projeto.html", {"form": form})
@@ -148,7 +148,7 @@ def form_processo(request):
         form = ProcessoForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("processo.html")
+            return redirect("processo_html")
     else:
         form = ProcessoForm()
     return render(request, "form_processo.html", {"form": form})
