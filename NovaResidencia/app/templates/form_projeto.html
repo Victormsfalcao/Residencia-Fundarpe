@@ -9,15 +9,43 @@
 <body>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-    <h1>Cadastrar Novo Projeto</h1>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Salvar</button>
-    </form>
-        <a href="{% url 'projeto_html' %}" class="btn btn-outline-primary mt-2">
-            <i class="bi bi-arrow-left"></i> Voltar
-        </a>
+        <h1>Cadastrar Novo Projeto</h1>
+        <form method="post">
+            {% csrf_token %}
+            {% if request.session.setor == 'UNAT' %}
+                    <div class="form-group">
+                    <label for="id_numero_projeto">Número do Projeto:</label>
+                    {{ form.numero_projeto }}
+                </div>
+                <div class="form-group">
+                    <label for="id_titulo_projeto">Título do Projeto:</label>
+                    {{ form.titulo_projeto }}
+                </div>
+                <div class="form-group">
+                    <label for="id_numero_sei">Número do SEI:</label>
+                    {{ form.numero_sei }}
+                </div>
+                <div class="form-group">
+                    <label for="id_valor_solicitado">Valor Solicitado:</label>
+                    {{ form.valor_solicitado }}
+                </div>
+                <div class="form-group">
+                    <label for="id_numero_parcela">N° da Parcela ou Projeto Integral:</label>
+                    {{ form.numero_parcela }}
+                </div>
+                <div class="form-group">
+                    <label for="id_status_transacao">Status da Transação:</label>
+                    {{ form.status_transacao }}
+                </div>
+
+                <button type="submit" class="btn btn-success">Salvar</button>
+            {% endif %}
+
+
+        </form>
+            <a href="{% url 'projeto_html' %}" class="btn btn-outline-primary mt-2">
+                <i class="bi bi-arrow-left"></i> Voltar
+            </a>
     </div>
 
 </body>

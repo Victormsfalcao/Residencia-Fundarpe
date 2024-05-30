@@ -9,7 +9,8 @@ from django.contrib.auth.models import User
 
 @login_required
 def home(request):
-    return render(request, 'home.html')
+    user = request.user
+    return render(request, 'home.html', {'user': user})
 
 @login_required
 def usuarios_html(request):
