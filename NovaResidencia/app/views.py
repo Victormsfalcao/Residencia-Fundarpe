@@ -77,6 +77,51 @@ def processo_html(request):
 
     return render(request, "processo.html", {"processos": processos})
 
+@login_required
+def escolhas_UAFF(request):
+    if request.method == "POST":
+        form = ProcessoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("processo_html")
+    else:
+        form = ProcessoForm()
+    return render(request, 'escolhas_UAFF.html', {'form': form})
+
+@login_required
+def confeccaoTermo(request):
+    if request.method == "POST":
+        form = ProcessoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("processo_html")
+    else:
+        form = ProcessoForm()
+    return render(request, 'confeccaoTermo.html', {'form': form})
+
+@login_required
+def envioTermo(request):
+    if request.method == "POST":
+        form = ProcessoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("processo_html")
+    else:
+        form = ProcessoForm()
+    return render(request, 'envioTermo.html', {'form': form})
+
+@login_required
+def recebimentoDoc(request):
+    if request.method == "POST":
+        form = ProcessoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("processo_html")
+    else:
+        form = ProcessoForm()
+    return render(request, 'recebimentoDoc.html', {'form': form})
+
+
 def form_cadastro_usuario(request):
     if request.method == "POST":
         form = CadastroUsuarioForm(request.POST)

@@ -13,8 +13,10 @@
     <div class="col-8 m-auto pt-4 pb-2 text-center">
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">Salvar</button>
+        {% if request.session.setor == 'UNAT' %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-success">Salvar</button>
+        {% endif %}
     </form>
     
     <a href="{% url 'transacao_html' %}" class="btn btn-outline-primary mt-2">

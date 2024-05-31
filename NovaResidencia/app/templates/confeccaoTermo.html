@@ -2,23 +2,21 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    <title>Cadastrar Processo</title>
 </head>
 <body>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h1>Cadastrar Novo Processo</h1> <br>
+        <h2>Data da confecção do termo</h2> <br>
             <form method="post">
                 {% csrf_token %}
-                {% if request.session.setor == 'SUGEF' %}
-                    <div class="form-group">
-                    <label for="id_titulo_projeto">autorizacao empenho:</label>
-                    {{ form.data_autorizacao_empenho }}
+                <div class="form-group">
+                <label for="id_data_conferencia_documentos"></label>
+                    {{form.data_confeccao_termo}}
                 </div>
-                {% endif %}
-
+                <br>
+                <p><strong>Status da transação: </strong>Confecção de CI de Pagamento e Termo de Compromisso</p> <br>
                 <button type="submit" class="btn btn-success">Salvar</button>
             </form>
         <a href="{% url 'processo_html' %}" class="btn btn-outline-primary mt-2">

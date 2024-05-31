@@ -89,6 +89,7 @@ class ProcessoForm(forms.ModelForm):
         widget=forms.DateInput(attrs={"type": "date"})
     )
 
+
     class Meta:
         model = Processo
         fields = [
