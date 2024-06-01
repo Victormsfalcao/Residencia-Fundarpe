@@ -28,19 +28,25 @@
                     <td>{{ projeto.status_transacao }}</td>
                     <td>
                         <div class="btn-group" role="group">
+                            {% if request.session.setor == 'UNAT' %}
                             <a href="{% url 'edit_projeto' projeto.id %}" class="btn btn-primary mr-2 rounded">Editar</a>
+                            {% endif %}
                             <a href="{% url 'view_projeto' projeto.id %}" class="btn btn-dark mr-2 rounded">Visualizar</a>
+                            {% if request.session.setor == 'UNAT' %}
                             <form action="{% url 'delete_projeto' projeto.id %}" method="post" class="d-inline-block">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger btnDel" onclick="return confirm('Tem certeza que deseja excluir este projeto?')">Excluir</button>
                             </form>
+                            {% endif %}
                         </div>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+         {% if request.session.setor == 'UNAT' %}
         <a href="{% url 'form_projeto' %}" class="btn btn-success">Adicionar Novo Projeto</a> <br>
+         {% endif %}
         <a href="{% url 'home' %}" class="btn btn-outline-primary mt-2">
             <i class="bi bi-arrow-left"></i> Voltar
         </a>

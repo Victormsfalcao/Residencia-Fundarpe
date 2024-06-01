@@ -77,49 +77,7 @@ def processo_html(request):
 
     return render(request, "processo.html", {"processos": processos})
 
-@login_required
-def escolhas_UAFF(request):
-    if request.method == "POST":
-        form = ProcessoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("processo_html")
-    else:
-        form = ProcessoForm()
-    return render(request, 'escolhas_UAFF.html', {'form': form})
 
-@login_required
-def confeccaoTermo(request):
-    if request.method == "POST":
-        form = ProcessoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("processo_html")
-    else:
-        form = ProcessoForm()
-    return render(request, 'confeccaoTermo.html', {'form': form})
-
-@login_required
-def envioTermo(request):
-    if request.method == "POST":
-        form = ProcessoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("processo_html")
-    else:
-        form = ProcessoForm()
-    return render(request, 'envioTermo.html', {'form': form})
-
-@login_required
-def recebimentoDoc(request):
-    if request.method == "POST":
-        form = ProcessoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect("processo_html")
-    else:
-        form = ProcessoForm()
-    return render(request, 'recebimentoDoc.html', {'form': form})
 
 
 def form_cadastro_usuario(request):
@@ -210,6 +168,18 @@ def edit_usuario(request, usuario_id):
     else:
         form = CadastroUsuarioForm(instance=usuario)
     return render(request, 'edit_usuario.html', {'form': form})
+
+@login_required
+def edit_transacao(request, transacao_id):
+    transacao = get_object_or_404(Transacao, pk=transacao_id)
+    if request.method == 'POST':
+        form = TransacaoForm(request.POST, instance=transacao)
+        if form.is_valid():
+            form.save()
+            return redirect('transacao_html')  #
+    else:
+        form = TransacaoForm(instance=transacao)
+    return render(request, 'edit_transacao.html', {'form': form})
 
 @login_required
 def edit_projeto(request, projeto_id):

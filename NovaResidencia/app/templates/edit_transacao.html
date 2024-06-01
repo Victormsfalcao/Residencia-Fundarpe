@@ -8,7 +8,7 @@
 <body>
 
   <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h1>Editar Projeto</h1>
+        <h1>Editar Transação</h1>
         <form method="post">
             {% csrf_token %}
             {% if request.session.setor == 'UNAT' %}
@@ -17,7 +17,7 @@
             {% endif %}
         </form>
 
-        <a href="{% url 'projeto_html' %}" class="btn btn-outline-primary mt-2">
+        <a href="{% url 'transacao_html' %}" class="btn btn-outline-primary mt-2">
             <i class="bi bi-arrow-left"></i> Voltar
         </a>
   </div>

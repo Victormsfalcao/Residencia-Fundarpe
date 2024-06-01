@@ -12,13 +12,7 @@
         <h1>Cadastrar Novo Processo</h1> <br>
             <form method="post">
                 {% csrf_token %}
-                {% if request.session.setor == 'SUGEF' %}
-                    <div class="form-group">
-                    <label for="id_titulo_projeto">autorizacao empenho:</label>
-                    {{ form.data_autorizacao_empenho }}
-                </div>
-                {% endif %}
-
+                {{form.as_p}}
                 <button type="submit" class="btn btn-success">Salvar</button>
             </form>
         <a href="{% url 'processo_html' %}" class="btn btn-outline-primary mt-2">

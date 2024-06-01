@@ -14,9 +14,11 @@
     <form method="post">
         {% csrf_token %}
         {% if request.session.setor == 'UNAT' %}
-            {{ form.as_p }}
+            {{ form.as_p }} <br>
+            <p><strong>Status da Transação: </strong>Abertura de Processo no SEI</p> <br>
             <button type="submit" class="btn btn-success">Salvar</button>
         {% endif %}
+
     </form>
     
     <a href="{% url 'transacao_html' %}" class="btn btn-outline-primary mt-2">

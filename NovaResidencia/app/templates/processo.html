@@ -43,20 +43,6 @@
             </tbody>
         </table>
         <br>
-
-        <div>
-            {% if request.session.setor == 'UAFF' %}
-                <h4>Selecione o que você deseja inserir: </h4> <br>
-                <a href="{% url 'escolhas_UAFF' %}" class="btn btn-dark mb-2">Data de Conferência da Documentação</a> <br>
-                <a href="{% url 'confeccaoTermo' %}" class="btn btn-dark mb-2">Data do Envio para Confecção de Termo de Compromisso</a> <br>
-                <a href="{% url 'envioTermo' %}" class="btn btn-dark mb-2">Data de Envido do Termo ao Proponente</a> <br>
-                <a href="{% url 'recebimentoDoc' %}" class="btn btn-dark mb-2">Data de Recebimento do Doc assinado</a> <br>
-            {% endif %}
-        </div>
-
-
-        <a href="{% url 'form_processo' %}" class="btn btn-success">Adiconar</a> <br>
-
         <a href="{% url 'home' %}" class="btn btn-outline-primary mt-2">
             <i class="bi bi-arrow-left"></i> Voltar
         </a>

@@ -35,7 +35,7 @@ class TransacaoForm(forms.ModelForm):
 
     class Meta:
         model = Transacao
-        fields = ["data_transacao", "status_transacao", "usuario"]
+        fields = ["data_transacao", "usuario"]
 
 
 class ProjetoForm(forms.ModelForm):

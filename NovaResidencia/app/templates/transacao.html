@@ -28,18 +28,26 @@
                     <td>{{ transacao.status_transacao }}</td>
                     <td>
                         <div class="btn-group" role="group">
+                            {% if request.session.setor == 'UNAT' %}
+                            <a href="{% url 'edit_transacao' transacao.id %}" class="btn btn-dark mr-2 rounded">Editar</a>
+                            {% endif %}
                             <a href="{% url 'view_transacao' transacao.id %}" class="btn btn-dark mr-2 rounded">Visualizar</a>
+                            {% if request.session.setor == 'UNAT' %}
                             <form action="{% url 'delete_transacao' transacao.id %}" method="post" class="d-inline-block">
                                 {% csrf_token %}
                                 <button type="submit" class="btn btn-danger btnDel rounded" onclick="return confirm('Tem certeza que deseja excluir esta transação?')">Excluir</button>
                             </form>
+                            {% endif %}
                         </div>
                     </td>
                 </tr>
                 {% endfor %}
             </tbody>
         </table>
+
+        {% if request.session.setor == 'UNAT' %}
         <a href="{% url 'form_transacao' %}" class="btn btn-success">Adicionar Nova Transacao</a> <br>
+        {% endif %}
         <a href="{% url 'home' %}" class="btn btn-outline-primary mt-2">
             <i class="bi bi-arrow-left"></i> Voltar
         </a>

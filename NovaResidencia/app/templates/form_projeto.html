@@ -9,7 +9,7 @@
 <body>
 
     <div class="col-8 m-auto pt-4 pb-2 text-center">
-        <h1>Cadastrar Novo Projeto</h1>
+        <h1>Cadastrar Novo Projeto</h1> <br>
         <form method="post">
             {% csrf_token %}
             {% if request.session.setor == 'UNAT' %}
@@ -32,7 +32,8 @@
                 <div class="form-group">
                     <label for="id_numero_parcela">N° da Parcela ou Projeto Integral:</label>
                     {{ form.numero_parcela }}
-                </div>
+                </div> <br>
+                <p><strong>Status da transação: </strong> Abertura de Processo no SEI</p> <br>
 
                 <button type="submit" class="btn btn-success">Salvar</button>
             {% endif %}
