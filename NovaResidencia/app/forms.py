@@ -47,7 +47,6 @@ class ProjetoForm(forms.ModelForm):
             "numero_parcela",
             "valor_solicitado",
             "titulo_projeto",
-            "status_transacao",
             "transacao",
         ]
 
@@ -107,6 +106,5 @@ class ProcessoForm(forms.ModelForm):
             "data_assinatura_termo",
             "data_envio_pagamento",
             "data_ordem_bancaria",
-            "status_transacao",
             "projeto",
         ]

@@ -13,26 +13,7 @@
         <form method="post">
             {% csrf_token %}
             {% if request.session.setor == 'UNAT' %}
-                    <div class="form-group">
-                    <label for="id_numero_projeto">Número do Projeto:</label>
-                    {{ form.numero_projeto }}
-                </div>
-                <div class="form-group">
-                    <label for="id_titulo_projeto">Título do Projeto:</label>
-                    {{ form.titulo_projeto }}
-                </div>
-                <div class="form-group">
-                    <label for="id_numero_sei">Número do SEI:</label>
-                    {{ form.numero_sei }}
-                </div>
-                <div class="form-group">
-                    <label for="id_valor_solicitado">Valor Solicitado:</label>
-                    {{ form.valor_solicitado }}
-                </div>
-                <div class="form-group">
-                    <label for="id_numero_parcela">N° da Parcela ou Projeto Integral:</label>
-                    {{ form.numero_parcela }}
-                </div> <br>
+                {{ form.as_p }}
                 <p><strong>Status da transação: </strong> Abertura de Processo no SEI</p> <br>
 
                 <button type="submit" class="btn btn-success">Salvar</button>

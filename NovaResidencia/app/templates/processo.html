@@ -9,6 +9,7 @@
 
     <div class="col-8 m-auto pt-4 pb-4 text-center">
         <h1>Processos</h1> <br>
+
         <table class="table table-striped">
             <thead class="thead-dark">
                 <tr>
@@ -16,7 +17,6 @@
                     <th scope="col">Nome do projeto</th>
                     <th scope="col">Data da solicitação</th>
                     <th scope="col">Numero do termo</th>
-                    <th scope="col">Status da transação</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
@@ -27,7 +27,6 @@
                     <td>{{ processo.projeto }}</td>
                     <td>{{ processo.data_solicitacao }}</td>
                     <td>{{ processo.numero_termo }}</td>
-                    <td>{{ processo.status_transacao }}</td>
                     <td>
                         <div class="btn-group" role="group">
                             <a href="{% url 'edit_processo' processo.id %}" class="btn btn-primary mr-2 rounded">Editar</a>
@@ -43,6 +42,12 @@
             </tbody>
         </table>
         <br>
+    
+        {% if request.session.setor == 'UNAT' %}
+        <a href="{% url 'form_processo' %}" class="btn btn-success">
+            <i class="bi bi-arrow-left">Adicionar novo processo</i>
+        </a> <br>
+        {% endif %}
         <a href="{% url 'home' %}" class="btn btn-outline-primary mt-2">
             <i class="bi bi-arrow-left"></i> Voltar
         </a>

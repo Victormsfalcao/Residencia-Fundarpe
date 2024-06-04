@@ -49,10 +49,16 @@ def transacao_html(request):
 
 @login_required
 def projeto_html(request):
-    projetos_list = Projeto.objects.all()
-    paginator = Paginator(projetos_list, 5)
+    search = request.GET.get('search')
+    projeto_list = Projeto.objects.all()
 
+    if search:
+        projeto_list = projeto_list.filter(titulo_projeto__icontains=search)
+
+
+    paginator = Paginator(projeto_list, 5)
     page = request.GET.get('page')
+
     try:
         projetos = paginator.page(page)
     except PageNotAnInteger:
@@ -60,14 +66,14 @@ def projeto_html(request):
     except EmptyPage:
         projetos = paginator.page(paginator.num_pages)
 
-    return render(request, "projeto.html", {"projetos": projetos})
+    return render(request, "projeto.html", {"projetos": projetos, "search_term": search})
 
 @login_required
 def processo_html(request):
     processos_list = Processo.objects.all()
     paginator = Paginator(processos_list, 5)
-
     page = request.GET.get('page')
+
     try:
         processos = paginator.page(page)
     except PageNotAnInteger:
