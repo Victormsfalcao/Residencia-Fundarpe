@@ -6,6 +6,8 @@ from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import login, logout
 from django.contrib.auth.models import User
+from datetime import datetime
+
 
 @login_required
 def home(request):
@@ -70,7 +72,16 @@ def projeto_html(request):
 
 @login_required
 def processo_html(request):
+    start_date = request.GET.get('start_date')
+    end_date = request.GET.get('end_date')
+
     processos_list = Processo.objects.all()
+
+    if start_date and end_date:
+        start_date = datetime.strptime(start_date, '%Y-%m-%d')
+        end_date = datetime.strptime(end_date, '%Y-%m-%d')
+        processos_list = processos_list.filter(data_solicitacao__range=[start_date, end_date])
+
     paginator = Paginator(processos_list, 5)
     page = request.GET.get('page')
 
@@ -262,3 +273,4 @@ def delete_processo(request, id):
         processo.delete()
         return redirect('processo_html')
     return render(request, 'processo.html', {'processo': processo})
+
