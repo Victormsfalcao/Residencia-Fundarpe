@@ -7,40 +7,38 @@ Um sistema CRUD (Create, Read, Update, Delete) construído com Django, fornecend
 
 # Funcionalidades Principais 
 
-Cadastro de usuários com autenticação. 
+* Cadastro de usuários com autenticação. 
 
-Operações CRUD para transações, projetos e processos. 
+* Operações CRUD para transações, projetos e processos. 
 
-Restrições de setor para preenchimento de formulários. 
+* Restrições de setor para preenchimento de formulários. 
 
-Interface de usuário amigável e funcionalidades de paginação, filtragem por data e barra de pesquisa. 
+* Interface de usuário amigável e funcionalidades de paginação, filtragem por data e barra de pesquisa. 
 
 # Pré-requisitos 
 
-Python 3.12.3 
+* Python 3.12.3 
 
-Django 
+* Django 
 
-Db browser Sqlite 
+* Db browser Sqlite 
 
 # Instalação e Configuração 
 
-Instale o python na sua máquina 
+* Instale o python na sua máquina 
 
-Instale o Django na pasta em que você clonou o repositório, utilizando o comando pip install django 
+* Instale o Django na pasta em que você clonou o repositório, utilizando o comando pip install django 
 
 # Para acessar a aplicação na Web, siga os seguintes passos: 
 
- 
+* Mova sua pasta para o Disco local c: 
 
-	* Mova sua pasta para o Disco local c: 
+* Acesse ela utilizando o CMD, e com os seguintes comandos em ordem você irá conseguir acessar a aplicação: 
 
-	* Acesse ela utilizando o CMD, e com os seguintes comandos em ordem você 	irá conseguir acessar a aplicação: 
 
- 
-
-cd c:/NomeDaPasta 
-
+ ``````
+ 	cd  c:/NomeDaPasta
+  
 		cd Residencia-Fundarpe 
 
 		cd NovaResidencia 
@@ -55,22 +53,21 @@ cd c:/NomeDaPasta
 
 		python manage.py runserver
                 
-               digite localhost:8000 na url do google e acesse o site
- 
-
-	 
+ ``````
+	
+ * Digite o link do localhost que está sendo mostrado no prompt na barra de pesquisa do google e acesse o site.
 
  
 
 # Uso 
 
-Acesse o sistema através do navegador web. 
+* Acesse o sistema através do navegador web. 
 
-Faça o cadastro no sistema, e após isso o login utilizando suas credenciais. 
+* Faça o cadastro no sistema, e após isso o login utilizando suas credenciais. 
 
-Explore as diferentes seções do sistema para criar, visualizar, editar ou excluir registros. 
+* Explore as diferentes seções do sistema para criar, visualizar, editar ou excluir registros. 
 
-Observe as restrições de setor ao preencher formulários. 
+* Observe as restrições de setor ao preencher formulários. 
 
  
 
